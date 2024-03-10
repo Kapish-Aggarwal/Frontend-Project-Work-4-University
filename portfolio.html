@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <!-- <link rel="stylesheet" href="page1style.html"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #navbar-wrapper {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+      }
+
+      .leftnav {
+        font-size: 2.5rem;
+        display: flex;
+      }
+
+      .leftnav p {
+        color: yellow;
+      }
+
+      .navitems {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+      }
+
+      .navMenu {
+        margin-left: 3rem;
+      }
+
+      .navMenu a {
+        text-decoration: none;
+      }
+
+      .Home {
+        padding: 2rem;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        text-align: center;
+      }
+
+      .lefthome {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .greeting,
+      .Define {
+        font-size: 1.5rem;
+        color: yellow;
+      }
+
+      .name {
+        font-size: 3.5rem;
+      }
+
+      .righthome {
+        width: 40%;
+      }
+
+      .righthome img {
+        width: 100%;
+      }
+
+      .AboutMe {
+        padding: 2rem;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        background-color: #1a1a1a;
+      }
+
+      .leftAboutMe {
+        width: 40%;
+        background-color: #1a1a1a;
+      }
+
+      .leftAboutMe img {
+        width: 100%;
+        background-color: #1a1a1a;
+      }
+
+      .rightAboutMe {
+        width: 40%;
+        font-size: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #1a1a1a;
+      }
+
+      #aboutMeMyself {
+        margin-top: 20px;
+        background-color: #1a1a1a;
+        font-weight: 600;
+      }
+
+      .details {
+        margin-top: 15px;
+        background-color: #1a1a1a;
+      }
+
+      .title {
+        margin-top: 50px;
+        background-color: #1a1a1a;
+      }
+
+      #aboutMeTitle {
+        color: yellow;
+        font-size: 2.5rem;
+        background-color: #1a1a1a;
+      }
+
+      .skill {
+        padding: 2rem;
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        padding-bottom: 4rem;
+      }
+
+      .skill p {
+        font-size: 1.5rem;
+      }
+
+      .title2 {
+        text-align: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 2rem;
+      }
+
+      .title2 b {
+        font-size: 2.5rem;
+        color: yellow;
+      }
+
+      .educationExperience {
+        padding: 5rem;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 2rem;
+        padding-bottom: 5rem;
+        background-color: #1a1a1a;
+      }
+
+      .leftsection {
+        width: 40%;
+        background-color: #1a1a1a;
+      }
+
+      .rightsection {
+        width: 40%;
+        background-color: #1a1a1a;
+      }
+
+      .leftsection1,
+      .rightsection1 {
+        font-size: 1.5rem;
+        padding: 1rem;
+        background-color: #262626;
+      }
+
+      .leftsection2,
+      .rightsection2 {
+        margin-top: 1rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+        background-color: #262626;
+      }
+
+      .leftsection p,
+      .rightsection p {
+        background-color: #262626;
+      }
+
+      .leftsection b,
+      .rightsection b {
+        color: yellow;
+        background-color: #262626;
+      }
+
+      #project1LinkText,
+      #project2LinkText {
+        text-decoration: none;
+        background-color: #262626;
+      }
+
+      .title3 {
+        font-size: 2.5rem;
+        color: yellow;
+        text-align: center;
+        margin-bottom: 1rem;
+        background-color: #1a1a1a;
+      }
+
+      .title4 {
+        font-size: 2.5rem;
+        color: yellow;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      .Contact form {
+        margin: 2rem auto;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        margin-bottom: 20px;
+        height: 40px;
+        padding: 10px;
+        border: 1px solid #a1a1a1;
+        background-color: white;
+        color: black;
+      }
+
+      textarea {
+        height: 80px;
+      }
+
+      button {
+        width: 100%;
+        margin-bottom: 20px;
+        height: 40px;
+        padding: 10px;
+        background: #ffbf35;
+        color: #fff;
+        border: none;
+        font-size: 16px;
+      }
+
+      .bottom {
+        padding: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+      }
+
+      .leftbottom,
+      .middlebottom,
+      .rightbottom {
+        width: 40%;
+      }
+
+      .icon i {
+        color: yellow;
+      }
+
+      .heading {
+        font-weight: bolder;
+        font-size: 1.8rem;
+        padding: 0.5rem;
+        color: white;
+      }
+
+      .heading a {
+        text-decoration: none;
+      }
+
+      /*****FOOTER SECTION*****/
+      .footer {
+        background-color: #1a1a1a;
+        padding: 2rem 0px;
+        width: 100%;
+        float: left;
+      }
+
+      .container {
+        display: flex;
+        background-color: #1a1a1a;
+        justify-content: space-around;
+        text-align: center;
+      }
+
+      .footer-sect {
+        color: #b3b3b3;
+        background-color: #1a1a1a;
+      }
+
+      .footer-sect a {
+        color: #b3b3b3;
+        margin-left: 10px;
+        text-decoration: none;
+        font-size: 18px;
+        text-align: center;
+        background-color: #1a1a1a;
+      }
+
+      .social-icon a i {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #cdcdcd;
+        background-color: #1a1a1a;
+        line-height: 50px;
+        font-size: 20px;
+        border-radius: 50%;
+      }
+
+      a {
+        transition: font-size 0.4s ease-in-out 0s;
+      }
+
+      a:hover {
+        font-size: 1.3rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar-wrapper">
+      <header>
+        <nav class="nav">
+          <div>
+            <div class="leftnav">
+              Port
+              <p>folio</p>
+            </div>
+          </div>
+          <div class="navitems">
+            <div class="navMenu"><a href="#Home">Home</a></div>
+            <div class="navMenu"><a href="#AboutMe">About Me</a></div>
+            <div class="navMenu">
+              <a href="#educationExperience">Education</a>
+            </div>
+            <div class="navMenu"><a href="#ContactMe">Contact Me</a></div>
+          </div>
+        </nav>
+      </header>
+    </div>
+
+    <div class="Home" id="Home">
+      <div class="lefthome">
+        <p class="greeting">Hi! I am</p>
+        <p class="name" id="homeName"></p>
+        <p class="Define" id="homeProfile"></p>
+      </div>
+      <div class="righthome">
+        <img id="photoUrl" alt="Photo" />
+      </div>
+    </div>
+
+    <div class="AboutMe" id="AboutMe">
+      <div class="leftAboutMe">
+        <img id="aboutMePhoto" alt="Photo" />
+      </div>
+      <div class="rightAboutMe">
+        <div class="title" id="aboutMeTitle"></div>
+        <div class="myself" id="aboutMeMyself"></div>
+        <div class="details" id="aboutMeDetails"></div>
+      </div>
+    </div>
+
+    <div class="skills">
+      <div class="title2"><b>My Skills</b></div>
+      <div class="skill" id="skillContainer"></div>
+    </div>
+
+    <div class="educationExperience" id="educationExperience">
+      <div class="leftsection">
+        <div class="title3">Education</div>
+        <div class="leftsection1">
+          <p id="collegeName"></p>
+          <p><b id="courseName"></b></p>
+          <p id="collegeYearText"></p>
+        </div>
+        <div class="leftsection2">
+          <p id="schoolName"></p>
+          <p><b id="classesName"></b></p>
+          <p id="schoolYearText"></p>
+        </div>
+      </div>
+      <div class="rightsection">
+        <div class="title3">Experience</div>
+        <div class="rightsection1">
+          <p id="project1Name"></p>
+          <p><b id="project1SkillsText"></b></p>
+          <p><a id="project1LinkText" href=""></a></p>
+        </div>
+        <div class="rightsection2">
+          <p id="project2Name"></p>
+          <p><b id="project2SkillsText"></b></p>
+          <p><a id="project2LinkText" href=""></a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="ContactMe" id="ContactMe">
+      <div class="title4">Get In Touch</div>
+      <div class="Contact">
+        <form
+          onsubmit="(event) => {
+            event.preventDefault();
+            myFunction();
+            }"
+        >
+          <input type="text" placeholder="Full Name..." />
+          <input type="text" placeholder="Full Email Id..." />
+          <input type="text" placeholder="Full Mobile No..." />
+          <textarea placeholder="Enter Address..."></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="bottom">
+        <div class="leftbottom">
+          <div class="icon">
+            <i class="fa-solid fa-mobile fa-xl"></i>
+          </div>
+          <div class="heading"><a href="#" id="phoneLink">Phone</a></div>
+        </div>
+        <div class="middlebottom">
+          <div class="icon">
+            <i class="fa-solid fa-file fa-xl"></i>
+          </div>
+          <div class="heading"><a href="#" id="resumeLink">Resume</a></div>
+        </div>
+        <div class="rightbottom">
+          <div class="icon">
+            <i class="fa-regular fa-envelope fa-xl"></i>
+          </div>
+          <div class="heading"><a href="#" id="emailLink">Mail</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="footer-sect">
+          <a href="https://www.facebook.com/" id="facebookLink"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/" id="instagramLink"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://in.linkedin.com/" id="linkedinLink"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a href="https://twitter.com/?lang=en" id="twitterLink"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+        </div>
+        <div class="footer-sect">
+          CopyRight © 2023 Website Template by kaps. All Rights Reserved
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Get URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const photoUrl = urlParams.get("photoUrl");
+      const homeName = urlParams.get("homeName");
+      const homeProfile = urlParams.get("homeProfile");
+      const aboutMePhotoUrl = urlParams.get("aboutMePhotoUrl");
+      const aboutMeMyself = urlParams.get("aboutMeMyself");
+      const aboutMeDetails = urlParams.get("aboutMeDetails");
+      const skill1 = urlParams.get("skill1");
+      const skill2 = urlParams.get("skill2");
+      const skill3 = urlParams.get("skill3");
+      const skill4 = urlParams.get("skill4");
+      const college = urlParams.get("college");
+      const course = urlParams.get("course");
+      const collegeYear = urlParams.get("collegeYear");
+      const school = urlParams.get("school");
+      const classes = urlParams.get("classes");
+      const schoolYear = urlParams.get("schoolYear");
+      const project1 = urlParams.get("project1");
+      const project1Skills = urlParams.get("project1Skills");
+      const project1Link = urlParams.get("project1Link");
+      const project2 = urlParams.get("project2");
+      const project2Skills = urlParams.get("project2Skills");
+      const project2Link = urlParams.get("project2Link");
+      const phoneNumber = urlParams.get("phone");
+      const resumeLink = urlParams.get("resume");
+      const email = urlParams.get("email");
+
+      // Display data
+      const imgElement = document.getElementById("photoUrl");
+      imgElement.src = photoUrl;
+      imgElement.alt = "Photo";
+      document.getElementById("homeName").textContent = homeName;
+      document.getElementById("homeProfile").textContent = `- ${homeProfile}`;
+      const aboutMePhotoElement = document.getElementById("aboutMePhoto");
+      aboutMePhotoElement.src = aboutMePhotoUrl;
+      aboutMePhotoElement.alt = "Photo";
+      document.getElementById("aboutMeTitle").textContent = "About Me";
+      document.getElementById("aboutMeMyself").textContent = aboutMeMyself;
+      document.getElementById("aboutMeDetails").textContent = aboutMeDetails;
+      const skillContainer = document.getElementById("skillContainer");
+      skillContainer.innerHTML = `
+            <div><p>${skill1}</p></div>
+            <div><p>${skill2}</p></div>
+            <div><p>${skill3}</p></div>
+            <div><p>${skill4}</p></div>
+        `;
+      document.getElementById("collegeName").textContent = college;
+      document.getElementById("courseName").textContent = course;
+      document.getElementById("collegeYearText").textContent = collegeYear;
+      document.getElementById("schoolName").textContent = school;
+      document.getElementById("classesName").textContent = classes;
+      document.getElementById("schoolYearText").textContent = schoolYear;
+      document.getElementById("project1Name").textContent = project1;
+      document.getElementById("project1SkillsText").textContent =
+        project1Skills;
+      document.getElementById("project1LinkText").href = project1Link;
+      document.getElementById("project1LinkText").textContent = project1Link;
+      document.getElementById("project2Name").textContent = project2;
+      document.getElementById("project2SkillsText").textContent =
+        project2Skills;
+      document.getElementById("project2LinkText").href = project2Link;
+      document.getElementById("project2LinkText").textContent = project2Link;
+      document.getElementById("phone").value = phoneNumber;
+      document.getElementById("resume").value = resumeLink;
+      document.getElementById("email").value = email;
+      document.getElementById("phoneLink").href = "tel:" + phoneNumber;
+      document.getElementById("resumeLink").href = resumeLink;
+      document.getElementById("emailLink").href = "mailto:" + email;
+
+      function myFunction() {
+        alert("Thank you. Your request has been send");
+      }
+    </script>
+  </body>
+</html>
